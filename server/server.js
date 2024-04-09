@@ -24,7 +24,7 @@ app.post('/api/planet', async (req, res) => {
   const terrain = req.body.terrain;
   const gravity = req.body.gravity;
   const population = req.body.population;
-  const residents = req.body.residents;
+  const residents = req.body.residents.split(",");
   const imageURL = req.body.imageURL;
   const planet = await new Planet({
     name,
@@ -34,7 +34,6 @@ app.post('/api/planet', async (req, res) => {
     population,
     residents,
     imageURL,
-    planet,
   })
   planet.save();
 })
