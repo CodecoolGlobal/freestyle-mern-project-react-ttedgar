@@ -1,27 +1,25 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import Planet from './model/Planet.js';
-
-const app = express();
-app.use(express.json());
+import Planet from "./model/Planet.js";
+import Person from "./model/Person.js";
+import mongoose from "mongoose";
 
 mongoose.connect('mongodb+srv://galaxy:12345@galaxycluscter.lytezua.mongodb.net/')
 
-/* async function fetchDataFromDatabase(url) {
+async function fetchDataFromDatabase(url) {
   let allData = [];
   while (true) {
     const response = await fetch(url);
     const data = await response.json();
-    allData = [...allData, data.results];
+    allData = [...allData, ...data.results];
     url = data.next;
     if (!data.next) {
       break
     }
   }
+  console.log(allData);
   return allData;
 }
 
-app.post('/api/planet', async (req, res) => {
+async function uploadDatabase() {
   const planetsFromDatabase = await fetchDataFromDatabase("https://swapi.dev/api/planets")
   planetsFromDatabase.forEach(async planetData => {
     const planet = await Planet.create({
@@ -34,12 +32,17 @@ app.post('/api/planet', async (req, res) => {
       imageURL: null
     })
   })
-}) */
 
-app.get('/api/proba', (req, res) => {
-  res.send({ hello: 'hello world' })
-})
+  const peopleFromDatabase = await fetchDataFromDatabase("https://swapi.dev/api/people")
+  peopleFromDatabase.forEach(async peopleData => {
+    const person = await Person.create({
+      name: peopleData.name,
+      starships: peopleData.starships,
+      homeworld: peopleData.homeworld,
+      imageURL: null
+    })
+  })
+}
 
-app.listen(5000, () => {
-  console.log('http://localhost:5000');
-})
+
+uploadDatabase();
