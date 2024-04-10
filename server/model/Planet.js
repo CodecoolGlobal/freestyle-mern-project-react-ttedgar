@@ -1,4 +1,4 @@
-import mongoose, {Schema, model} from "mongoose";
+import {Schema, model} from "mongoose";
 
 const planetSchema = new Schema({
   name: String,
@@ -6,7 +6,7 @@ const planetSchema = new Schema({
   terrain: String,
   gravity: String,
   population: String,
-  residents: [String],
+  residents: [Object],
   imageURL: String
 })
 

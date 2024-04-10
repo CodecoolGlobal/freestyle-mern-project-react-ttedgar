@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import {RouterProvider, createBrowserRouter} from 'react-router-dom'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import NewPlanetForm from './components/NewPlanetfForm.jsx'
 import App from './App.jsx'
+import Admin from './components/Admin.jsx'
 
 const router = createBrowserRouter([
   {
@@ -11,7 +12,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin",
-    element: <NewPlanetForm></NewPlanetForm>
+    element: <Admin/>
   }
 ]);
 
