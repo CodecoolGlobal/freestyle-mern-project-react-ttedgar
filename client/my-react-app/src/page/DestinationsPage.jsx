@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Destination from "../component/Destination";
+import Destination from "../components/Destination";
 
 function DestinationsPage() {
 

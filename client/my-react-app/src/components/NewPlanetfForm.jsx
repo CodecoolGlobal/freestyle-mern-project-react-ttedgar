@@ -3,7 +3,7 @@ import  { useState } from "react"
 function NewPlanetForm() {
   const [name, setName] = useState(null)
   const [climate, setClimate] = useState(null)
-  const [tererain, setTererain] = useState(null)
+  const [terrain, setTerrain] = useState(null)
   const [gravity, setGravity] = useState(null)
   const [population, setPopulation] = useState(null)
   const [residents, setResidents] = useState(null)
@@ -13,7 +13,7 @@ function NewPlanetForm() {
     const newPlanet = {
       name,
       climate,
-      tererain,
+      terrain,
       gravity,
       population,
       residents,
@@ -31,7 +31,7 @@ function NewPlanetForm() {
     <form onSubmit={handleSubmit}>
       <div><input placeholder="name" onChange={event => setName(event.target.value)}></input></div>
       <div><input placeholder="climate" onChange={event => setClimate(event.target.value)}></input></div>
-      <div><input placeholder="tererain" onChange={event => setTererain(event.target.value)}></input></div>
+      <div><input placeholder="terrain" onChange={event => setTerrain(event.target.value)}></input></div>
       <div><input placeholder="gravity" onChange={event => setGravity(event.target.value)}></input></div>
       <div><input placeholder="population" onChange={event => setPopulation(event.target.value)}></input></div>
       <div><input placeholder="residents" onChange={event => setResidents(event.target.value)}></input></div>
