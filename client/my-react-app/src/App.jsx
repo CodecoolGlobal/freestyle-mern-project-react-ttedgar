@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import NewPlanetForm from './components/NewPlanetfForm'
+import NavBar from './components/NavBar'
 
 function App() {
 
 
   return (
     <>
-      <div>retek</div>
+      <div>
+         <NavBar/>
+      </div>
     </>
   )
 }
