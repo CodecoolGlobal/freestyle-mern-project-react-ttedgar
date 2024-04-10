@@ -1,13 +1,14 @@
-import { useState, useEffect } from 'react'
 import './App.css'
-import NewPlanetForm from './components/NewPlanetfForm'
+import DestinationsPage from './page/DestinationsPage'
 
 function App() {
 
 
   return (
     <>
-      <div>retek</div>
+      <div>
+        <DestinationsPage />
+      </div>
     </>
   )
 }
