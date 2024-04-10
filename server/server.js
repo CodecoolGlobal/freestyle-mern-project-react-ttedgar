@@ -7,17 +7,6 @@ app.use(express.json());
 
 mongoose.connect('mongodb+srv://galaxy:12345@galaxycluscter.lytezua.mongodb.net/')
 
-// const planet = new Planet({
-//     "name": "String",
-//     "climate": "String",
-//     "terrain": "String",
-//     "gravity": "String",
-//     "population": "String",
-//     "residents": [0, 1, 3], 
-//     "imageURL": "String"
-// });
-// planet.save();
-
 app.post('/api/planet', async (req, res) => {
   const name = req.body.name;
   const climate = req.body.climate;
