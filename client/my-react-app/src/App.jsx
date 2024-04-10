@@ -1,13 +1,14 @@
-import { useState, useEffect } from 'react'
 import './App.css'
-import NavBar from './components/NavBar'
+import DestinationsPage from './page/DestinationsPage'
 
 function App() {
 
 
   return (
-    <>    
-      <NavBar/>
+    <>
+      <div>
+        <DestinationsPage />
+      </div>
     </>
   )
 }
