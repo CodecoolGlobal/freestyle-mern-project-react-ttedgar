@@ -28,15 +28,16 @@ function NewPlanetForm() {
   }
 
   return <div>
+    <h2>Add new destination</h2>
     <form onSubmit={handleSubmit}>
-      <input placeholder="name" onChange={event => setName(event.target.value)}></input>
-      <input placeholder="climate" onChange={event => setClimate(event.target.value)}></input>
-      <input placeholder="tererain" onChange={event => setTererain(event.target.value)}></input>
-      <input placeholder="gravity" onChange={event => setGravity(event.target.value)}></input>
-      <input placeholder="population" onChange={event => setPopulation(event.target.value)}></input>
-      <input placeholder="residents" onChange={event => setResidents(event.target.value)}></input>
-      <input placeholder="imageURL" onChange={event => setImageURL(event.target.value)}></input>
-      <button type="submit">Submit</button>
+      <div><input placeholder="name" onChange={event => setName(event.target.value)}></input></div>
+      <div><input placeholder="climate" onChange={event => setClimate(event.target.value)}></input></div>
+      <div><input placeholder="tererain" onChange={event => setTererain(event.target.value)}></input></div>
+      <div><input placeholder="gravity" onChange={event => setGravity(event.target.value)}></input></div>
+      <div><input placeholder="population" onChange={event => setPopulation(event.target.value)}></input></div>
+      <div><input placeholder="residents" onChange={event => setResidents(event.target.value)}></input></div>
+      <div><input placeholder="imageURL" onChange={event => setImageURL(event.target.value)}></input></div>
+      <div><button type="submit">Submit</button></div>
     </form>
   </div>
 }

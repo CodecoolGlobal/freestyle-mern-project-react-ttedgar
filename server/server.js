@@ -7,37 +7,14 @@ app.use(express.json());
 
 mongoose.connect('mongodb+srv://galaxy:12345@galaxycluscter.lytezua.mongodb.net/')
 
-/* async function fetchDataFromDatabase(url) {
-  let allData = [];
-  while (true) {
-    const response = await fetch(url);
-    const data = await response.json();
-    allData = [...allData, data.results];
-    url = data.next;
-    if (!data.next) {
-      break
-    }
-  }
-  return allData;
-}
+app.get('/api/destinations', async (req, res) => {
+  const planetList = await Planet.find();
+  res.send(planetList);
+})
 
-app.post('/api/planet', async (req, res) => {
-  const planetsFromDatabase = await fetchDataFromDatabase("https://swapi.dev/api/planets")
-  planetsFromDatabase.forEach(async planetData => {
-    const planet = await Planet.create({
-      name: planetData.name,
-      climate: planetData.climate,
-      terrain: planetData.terrain,
-      gravity: planetData.gravity,
-      population: planetData.population,
-      residents: planetData.residents,
-      imageURL: null
-    })
-  })
-}) */
-
-app.get('/api/proba', (req, res) => {
-  res.send({ hello: 'hello world' })
+app.get('/api/people', async (req, res) => {
+  const personList = await Person.find();
+  res.send(personList);
 })
 
 app.listen(5000, () => {

@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import {RouterProvider, createBrowserRouter} from 'react-router-dom'
-import NewPlanetForm from './components/NewPlanetfForm.jsx'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import NavBar from './components/NavBar.jsx'
+import Admin from './components/Admin.jsx'
 
 const router = createBrowserRouter([
   {
@@ -39,10 +39,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin",
-    element:<>
-    <NavBar/>
-    <NewPlanetForm></NewPlanetForm>
-    </> 
+    element: <Admin/>
   }
 ]);
 

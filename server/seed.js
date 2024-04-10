@@ -19,18 +19,35 @@ async function fetchDataFromDatabase(url) {
   return allData;
 }
 
+async function fetchResidents(url) {
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
+}
+
 async function uploadDatabase() {
   const planetsFromDatabase = await fetchDataFromDatabase("https://swapi.dev/api/planets")
-  planetsFromDatabase.forEach(async planetData => {
-    const planet = await Planet.create({
-      name: planetData.name,
-      climate: planetData.climate,
-      terrain: planetData.terrain,
-      gravity: planetData.gravity,
-      population: planetData.population,
-      residents: planetData.residents,
+  for (const planet of planetsFromDatabase) {
+    const residents = [];
+    for (const residentURL of planet.residents) {
+      residents.push(await fetchResidents(residentURL))
+    }
+    const dbplanet = await Planet.create({
+      name: planet.name,
+      climate: planet.climate,
+      terrain: planet.terrain,
+      gravity: planet.gravity,
+      population: planet.population,
+      residents: residents,
       imageURL: null
     })
+  }
+
+  planetsFromDatabase.forEach(async planetData => {
+    const residentObject = [];
+    for (const resURL of planetData.residents) {
+      residentObject.push(await fetchResidents(resURL))
+    }
   })
 
   const peopleFromDatabase = await fetchDataFromDatabase("https://swapi.dev/api/people")
