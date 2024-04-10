@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import Planet from "./model/Planet.js";
+import Person from "./model/Person.js";
 
 const app = express();
 app.use(express.json());
