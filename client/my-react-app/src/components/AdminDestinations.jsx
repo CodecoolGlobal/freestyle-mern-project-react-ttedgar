@@ -11,7 +11,7 @@ function AdminDestinations() {
       console.log(data);
     }
   
-    fetchDestinations('/api/destinations');
+    fetchDestinations('/api/planets');
   }, [])
 
   if (planetList) {

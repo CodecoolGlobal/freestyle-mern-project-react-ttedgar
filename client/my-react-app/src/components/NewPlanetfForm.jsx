@@ -1,6 +1,5 @@
 import  { useState } from "react"
 
-
 function NewPlanetForm() {
   const [name, setName] = useState(null)
   const [climate, setClimate] = useState(null)
@@ -20,7 +19,7 @@ function NewPlanetForm() {
       residents,
       imageURL,
     }
-    await fetch("/api/planet", {
+    await fetch("/api/planets", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newPlanet)
