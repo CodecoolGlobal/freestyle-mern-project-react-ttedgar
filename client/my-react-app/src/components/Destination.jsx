@@ -4,9 +4,9 @@ import Image from "./Image"
 function Destination({ destinationData }) {
 
   return (
-    <div>
+    <div className="item">
       <a href={`/destinations/${destinationData._id}`}>
-        <div>{destinationData.name}</div>
+        <div className="itemText">{destinationData.name}</div>
         <Image />
       </a>
     </div>

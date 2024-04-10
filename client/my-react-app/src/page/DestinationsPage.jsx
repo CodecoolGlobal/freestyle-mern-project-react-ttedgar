@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Destination from "../components/Destination";
+import Loading from "../components/Loading";
 
 function DestinationsPage() {
 
@@ -17,12 +18,12 @@ function DestinationsPage() {
 
 
   return (
-    <div>
+    <div className="container">
       {destinationsData ? (
         destinationsData.map((destinationData) => 
         <Destination destinationData={destinationData} key={destinationData._id}/>
       )) : (
-        <div>Loading</div>
+        <Loading />
       )}
     </div>
   );

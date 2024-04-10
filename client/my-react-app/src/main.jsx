@@ -4,6 +4,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import NavBar from './components/NavBar.jsx'
 import Admin from './components/Admin.jsx'
 import DestinationsPage from './page/DestinationsPage'
+import "./index.css"
 
 const router = createBrowserRouter([
   {
