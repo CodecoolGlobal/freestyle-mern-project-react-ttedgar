@@ -1,10 +1,11 @@
-import React from "react";
-
-function NavButton({text}) {
-  
-
-  return  <button>{text}</button>
-  
+function NavButton({ text, pageLink }) {
+  return (
+    <a href={pageLink}>
+      <button>
+        {text}
+      </button>
+    </a>
+  );
 }
 
-export default NavButton
+export default NavButton;

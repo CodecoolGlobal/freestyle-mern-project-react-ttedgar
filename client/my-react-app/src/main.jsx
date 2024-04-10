@@ -2,16 +2,47 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {RouterProvider, createBrowserRouter} from 'react-router-dom'
 import NewPlanetForm from './components/NewPlanetfForm.jsx'
-import App from './App.jsx'
+import NavBar from './components/NavBar.jsx'
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App></App>
+    element: <NavBar/>
+  },
+  {
+    path: "/destinations",
+    element: <>
+    <NavBar/>
+    <div>még nincs</div>
+    </>
+  },
+  {
+    path: "/aboutus",
+    element: <>
+    <NavBar/>
+    <div>még nincs</div>
+    </>
+  },
+  {
+    path: "/contact",
+    element: <>
+    <NavBar/>
+    <div>még nincs</div>
+    </>
+  },
+  {
+    path: "/tourguide",
+    element: <>
+    <NavBar/>
+    <div>még nincs</div>
+    </>
   },
   {
     path: "/admin",
-    element: <NewPlanetForm></NewPlanetForm>
+    element:<>
+    <NavBar/>
+    <NewPlanetForm></NewPlanetForm>
+    </> 
   }
 ]);
 

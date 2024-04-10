@@ -6,10 +6,8 @@ function App() {
 
 
   return (
-    <>
-      <div>
-         <NavBar/>
-      </div>
+    <>    
+      <NavBar/>
     </>
   )
 }
