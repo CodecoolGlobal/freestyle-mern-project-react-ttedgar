@@ -10,7 +10,7 @@ function AdminDestinations() {
       setPlanetList(data);
     }
   
-    fetchDestinations('/api/planet');
+    fetchDestinations('/api/planets');
   }, [])
 
   if (planetList) {
