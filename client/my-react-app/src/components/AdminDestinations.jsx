@@ -7,11 +7,10 @@ function AdminDestinations() {
     async function fetchDestinations(url) {
       const response = await fetch(url);
       const data = await response.json();
-      setPlanetList(data)
-      console.log(data);
+      setPlanetList(data);
     }
   
-    fetchDestinations('/api/destinations');
+    fetchDestinations('/api/planet');
   }, [])
 
   if (planetList) {
