@@ -42,6 +42,7 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
+  color: rgb(255, 255, 255);
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -118,7 +119,7 @@ button:focus-visible {
 }
 
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -129,4 +130,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
