@@ -10,10 +10,8 @@ function PlanetPage() {
   
   useEffect(() => {
     async function fetchPlanet() {
-      console.log(params.id);
-      const response = await fetch(`/api/planets/${params.id}`)
+      const response = await fetch(`/api/planets/${params.name}`)
       const data = await response.json();
-      console.log(data);
       setPlanet(data);
     }
 

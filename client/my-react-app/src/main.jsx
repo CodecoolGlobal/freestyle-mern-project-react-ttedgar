@@ -50,7 +50,7 @@ const router = createBrowserRouter([
     element: <Admin />
   },
   {
-    path: "/destinations/:id",
+    path: "/destinations/:name",
     element: <>
       <NavBar/>
       <PlanetPage/>

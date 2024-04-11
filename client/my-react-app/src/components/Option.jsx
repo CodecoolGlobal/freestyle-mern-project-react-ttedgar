@@ -5,7 +5,7 @@ function Option({ optionData }) {
 
   return (
     <div className="item">
-      <a href={`/destinations/${optionData._id}`}>
+      <a href={`/destinations/${optionData.name}`}>
         <div className="itemText">{optionData.name}</div>
         <Image />
       </a>

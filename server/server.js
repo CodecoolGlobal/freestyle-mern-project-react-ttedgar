@@ -17,12 +17,9 @@ app.get('/api/planets', async (req, res) => {
   const planets = await Planet.find();
   res.send(planets)
 });
-
-app.get('/api/planets/:id', async (req, res) => {
-  const planetID = req.params.id;
-  console.log(planetID);
-  const planet = await Planet.findById(planetID);
-  console.log(planet);
+  
+app.get('/api/planets/:name', async (req, res) => {
+  const planet = await Planet.findOne({name: req.params.name});
   res.send(planet);
 })
 
