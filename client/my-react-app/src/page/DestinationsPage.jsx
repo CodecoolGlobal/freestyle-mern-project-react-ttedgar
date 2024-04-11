@@ -17,16 +17,19 @@ function DestinationsPage() {
   }, [])
 
 
-  return (
-    <div className="container">
-      {destinationsData ? (
-        destinationsData.map((destinationData) => 
-        <Destination destinationData={destinationData} key={destinationData._id}/>
-      )) : (
-        <Loading />
-      )}
-    </div>
-  );
+return (
+  <>
+    {destinationsData ? (
+      <div className="container">
+        {destinationsData.map((destinationData) => 
+          <Destination destinationData={destinationData} key={destinationData._id}/>
+        )}
+      </div>
+    ) : (
+      <Loading />
+    )}
+  </>
+);
 }
 
 export default DestinationsPage;

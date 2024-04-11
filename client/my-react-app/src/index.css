@@ -5,12 +5,13 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-image: url('/images/stars.jpg');
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
 }
 
 a {
@@ -45,7 +46,8 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color:  rgb(255, 208, 0);
+  transform: scale(1.20); 
 }
 button:focus,
 button:focus-visible {
@@ -64,7 +66,7 @@ button:focus-visible {
   gap: 10px 10px;
   padding-bottom: 10px;
   padding-top: 10px;
-  background-image: url('/images/stars.jpg');
+ /*  background-image: url('/images/stars.jpg'); */
 }
 
 .navBtn{
@@ -101,6 +103,13 @@ button:focus-visible {
   color: white; /* Adjust text color as needed */
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background color for better readability */
   padding: 10px; /* Adjust padding as needed */
+}
+
+.loading{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @font-face {
