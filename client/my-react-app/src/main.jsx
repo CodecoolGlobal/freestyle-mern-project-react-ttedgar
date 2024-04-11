@@ -5,11 +5,15 @@ import NavBar from './components/NavBar.jsx'
 import Admin from './components/Admin.jsx'
 import DestinationsPage from './page/DestinationsPage'
 import "./index.css"
+import Loading frgitom './components/Loading.jsx'
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <NavBar />
+    element: <>
+    <NavBar />
+    <Loading/>
+    </>
   },
   {
     path: "/destinations",
@@ -22,21 +26,21 @@ const router = createBrowserRouter([
     path: "/aboutus",
     element: <>
       <NavBar />
-      <div>még nincs</div>
+      <Loading/>
     </>
   },
   {
     path: "/contact",
     element: <>
       <NavBar />
-      <div>még nincs</div>
+      <Loading/>
     </>
   },
   {
     path: "/tourguide",
     element: <>
       <NavBar />
-      <div>még nincs</div>
+      <Loading/>
     </>
   },
   {
