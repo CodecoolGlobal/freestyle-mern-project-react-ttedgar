@@ -51,11 +51,12 @@ async function uploadDatabase() {
   })
 
   const peopleFromDatabase = await fetchDataFromDatabase("https://swapi.dev/api/people")
-  peopleFromDatabase.forEach(async peopleData => {
+  peopleFromDatabase.forEach(async (peopleData, index) => {
     const person = await Person.create({
       name: peopleData.name,
       starships: peopleData.starships,
       homeworld: peopleData.homeworld,
+      id: index,
       imageURL: null
     })
   })
