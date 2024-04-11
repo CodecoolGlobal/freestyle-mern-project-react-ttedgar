@@ -8,6 +8,7 @@ import "./index.css"
 import Loading from './components/Loading.jsx'
 import TourGuidesPage from './page/TourGuidePage.jsx'
 import HomePage from './page/HomePage.jsx'
+import PlanetPage from './page/PlanetPage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,17 @@ const router = createBrowserRouter([
   {
     path: "/admin",
     element: <Admin />
+  },
+  {
+    path: "/destinations/:id",
+    element: <>
+      <NavBar/>
+      <PlanetPage/>
+    </>
+  },
+  {
+    path: "/proba",
+    element: <NavBar/>
   }
 ]);
 
