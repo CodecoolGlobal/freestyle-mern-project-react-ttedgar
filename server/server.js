@@ -18,6 +18,14 @@ app.get('/api/planets', async (req, res) => {
   res.send(planets)
 });
 
+app.get('/api/planets/:id', async (req, res) => {
+  const planetID = req.params.id;
+  console.log(planetID);
+  const planet = await Planet.findById(planetID);
+  console.log(planet);
+  res.send(planet);
+})
+
 app.post('/api/planets', async (req, res) => {
   const newPlanet = req.body;
   const residentIDs = newPlanet.residents.split(',');
