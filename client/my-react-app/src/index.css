@@ -114,7 +114,7 @@ button:focus-visible {
 
 @font-face {
   font-family: 'StarJediHollow';
-  src: url('./fonts/Starjedi.ttf') format('truetype');
+  src: url('Starjedi.ttf') format('truetype');
 }
 
 

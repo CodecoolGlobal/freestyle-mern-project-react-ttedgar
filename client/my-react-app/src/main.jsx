@@ -5,7 +5,8 @@ import NavBar from './components/NavBar.jsx'
 import Admin from './components/Admin.jsx'
 import DestinationsPage from './page/DestinationsPage'
 import "./index.css"
-import Loading frgitom './components/Loading.jsx'
+import Loading from './components/Loading.jsx'
+import PlanetPage from './page/PlanetPage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,17 @@ const router = createBrowserRouter([
   {
     path: "/admin",
     element: <Admin />
+  },
+  {
+    path: "/destinations/:id",
+    element: <>
+      <NavBar/>
+      <PlanetPage/>
+    </>
+  },
+  {
+    path: "/proba",
+    element: <NavBar/>
   }
 ]);
 
