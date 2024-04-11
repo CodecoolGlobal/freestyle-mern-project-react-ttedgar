@@ -10,7 +10,10 @@ import Loading from './components/Loading.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <NavBar />
+    element: <>
+    <NavBar />
+    <Loading/>
+    </>
   },
   {
     path: "/destinations",
@@ -37,7 +40,7 @@ const router = createBrowserRouter([
     path: "/tourguide",
     element: <>
       <NavBar />
-      <div>még nincs</div>
+      <Loading/>
     </>
   },
   {
