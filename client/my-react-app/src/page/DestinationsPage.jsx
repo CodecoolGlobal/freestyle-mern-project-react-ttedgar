@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Destination from "../components/Destination";
+import Option from "../components/Option";
 import Loading from "../components/Loading";
 
 function DestinationsPage() {
@@ -22,7 +22,7 @@ return (
     {destinationsData ? (
       <div className="container">
         {destinationsData.map((destinationData) => 
-          <Destination destinationData={destinationData} key={destinationData._id}/>
+          <Option optionData={destinationData} key={destinationData._id}/>
         )}
       </div>
     ) : (
