@@ -17,12 +17,12 @@ function TourGuidesPage() {
     fetchData()
   }, [])
 
-  return (
+  return (  
     <>
       {tourGuidesData ? (
         <div className="container"> 
         {tourGuidesData.map((tourGuidesData) => 
-      <Option optionData={tourGuidesData} key={tourGuidesData._id}/>
+      <Option optionData={tourGuidesData} option='tourguide' key={tourGuidesData._id}/>
       )}
         </div>
       ) : (

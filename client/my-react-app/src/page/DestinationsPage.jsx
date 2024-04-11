@@ -22,7 +22,7 @@ return (
     {destinationsData ? (
       <div className="container">
         {destinationsData.map((destinationData) => 
-          <Option optionData={destinationData} key={destinationData._id}/>
+          <Option optionData={destinationData} option='destinations' key={destinationData._id}/>
         )}
       </div>
     ) : (

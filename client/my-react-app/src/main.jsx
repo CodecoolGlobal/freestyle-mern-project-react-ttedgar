@@ -50,16 +50,19 @@ const router = createBrowserRouter([
     element: <Admin />
   },
   {
-    path: "/destinations/:id",
+    path: "/destinations/:name",
     element: <>
       <NavBar/>
       <PlanetPage/>
     </>
   },
   {
-    path: "/proba",
-    element: <NavBar/>
-  }
+    path: "/tourguide/:name",
+    element: <>
+      <NavBar/>
+      <PlanetPage/>
+    </>
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
