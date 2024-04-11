@@ -19,7 +19,7 @@ async function fetchDataFromDatabase(url) {
   return allData;
 }
 
-async function fetchResidents(url) {
+async function fetchData(url) {
   const response = await fetch(url);
   const data = await response.json();
   return data;
@@ -30,7 +30,7 @@ async function uploadDatabase() {
   for (const planet of planetsFromDatabase) {
     const residents = [];
     for (const residentURL of planet.residents) {
-      residents.push(await fetchResidents(residentURL))
+      residents.push(await fetchData(residentURL))
     }
     const dbplanet = await Planet.create({
       name: planet.name,
@@ -46,20 +46,27 @@ async function uploadDatabase() {
   planetsFromDatabase.forEach(async planetData => {
     const residentObject = [];
     for (const resURL of planetData.residents) {
-      residentObject.push(await fetchResidents(resURL))
+      residentObject.push(await fetchData(resURL))
     }
   })
 
   const peopleFromDatabase = await fetchDataFromDatabase("https://swapi.dev/api/people")
-  peopleFromDatabase.forEach(async (peopleData, index) => {
+  let index = 0
+  for (const dbperson of peopleFromDatabase) {
+    const starships = [];
+    const homeworld = await fetchData(dbperson.homeworld)
+    index++
+    for (const starshipURL of dbperson.starships) {
+      starships.push(await fetchData(starshipURL))
+    }
     const person = await Person.create({
-      name: peopleData.name,
-      starships: peopleData.starships,
-      homeworld: peopleData.homeworld,
+      name: dbperson.name,
+      starships: starships,
+      homeworld: homeworld,
       id: index,
       imageURL: null
     })
-  })
+  }
 }
 
 

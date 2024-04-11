@@ -8,20 +8,24 @@ app.use(express.json());
 
 mongoose.connect('mongodb+srv://galaxy:12345@galaxycluscter.lytezua.mongodb.net/')
 
-app.get('/api/people', async (req, res) => {
-  const personList = await Person.find();
-  res.send(personList);
-})
+function createOptionEndpoint(option, database) {
+  app.get(`/api/${option}/:name`, async (req, res) => {
+    const chosenItem = await database.findOne({name: req.params.name});
+    res.send(chosenItem);
+  })
+}
 
-app.get('/api/planets', async (req, res) => {
-  const planets = await Planet.find();
-  res.send(planets)
-});
-  
-app.get('/api/planets/:name', async (req, res) => {
-  const planet = await Planet.findOne({name: req.params.name});
-  res.send(planet);
-})
+function createListEndpoint(list, database) {
+  app.get(`/api/${list}`, async (req, res) => {
+    const toSend = await database.find();
+    res.send(toSend);
+  })
+}
+
+createOptionEndpoint('planets', Planet)
+createOptionEndpoint('tourguide', Person)
+createListEndpoint('planets', Planet)
+createListEndpoint('people', Person)
 
 app.post('/api/planets', async (req, res) => {
   const newPlanet = req.body;

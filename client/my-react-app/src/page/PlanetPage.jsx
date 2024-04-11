@@ -17,7 +17,7 @@ function PlanetPage() {
 
     fetchPlanet();
     
-  }, [])
+  }, [params.name])
 
   return (
     <div>

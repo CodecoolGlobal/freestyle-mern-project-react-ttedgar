@@ -1,35 +1,38 @@
-import { useEffect, useState } from "react";
-import Option from "../components/Option";
-import Loading from "../components/Loading";
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import Loading from '../components/Loading';
 
 
-function TourGuidesPage() {
-  
-  const [tourGuidesData, setTourGuidesData] = useState(null)
+function TourGuidePage() {
+  const params = useParams();
+  const [guide, setGuide] = useState(null);
 
   useEffect(() => {
-    async function fetchData() {
-      const response = await fetch("/api/people")
+    async function fetchGuide() {
+      const response = await fetch(`/api/tourguide/${params.name}`);
       const data = await response.json();
+      setGuide(data);
       console.log(data);
-      setTourGuidesData(data);
     }
-    fetchData()
-  }, [])
 
-  return (  
-    <>
-      {tourGuidesData ? (
-        <div className="container"> 
-        {tourGuidesData.map((tourGuidesData) => 
-      <Option optionData={tourGuidesData} option='tourguide' key={tourGuidesData._id}/>
-      )}
-        </div>
-      ) : (
-        <Loading/>
-      )}
-    </>
+    fetchGuide();
+  }, [params.name])
+
+  return (
+    <div>
+      {guide 
+      ? <>
+      <h1>{guide.name}</h1>
+      <h2>Homeworld:</h2>
+      <a href={`/destinations/${guide.homeworld.name}`}>{guide.homeworld.name}</a>
+      <h2>Starships:</h2>
+      {guide.starships.map((starship) => (
+        <><h4>{starship.name}</h4></>
+      ))}
+      </> 
+      : <Loading/>}
+    </div>
   )
 }
 
-export default TourGuidesPage
+export default TourGuidePage
