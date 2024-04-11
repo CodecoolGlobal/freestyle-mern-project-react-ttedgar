@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 import Image from "./Image"
 
-function Option({ optionData }) {
+function Option({ optionData, option }) {
 
   return (
     <div className="item">
-      <a href={`/destinations/${optionData.name}`}>
+      <a href={`/${option}/${optionData.name}`}>
         <div className="itemText">{optionData.name}</div>
         <Image />
       </a>

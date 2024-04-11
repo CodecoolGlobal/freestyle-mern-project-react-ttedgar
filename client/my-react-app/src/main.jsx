@@ -57,9 +57,12 @@ const router = createBrowserRouter([
     </>
   },
   {
-    path: "/proba",
-    element: <NavBar/>
-  }
+    path: "/tourguide/:name",
+    element: <>
+      <NavBar/>
+      <PlanetPage/>
+    </>
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
