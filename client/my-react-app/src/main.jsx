@@ -10,6 +10,8 @@ import TourGuidesPage from './page/TourGuidesPage.jsx'
 import HomePage from './page/HomePage.jsx'
 import PlanetPage from './page/PlanetPage.jsx'
 import TourGuidePage from './page/TourGuidePage.jsx'
+import ShipsPage from './page/ShipsPage.jsx'
+import ShipPage from './page/ShipPage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,13 @@ const router = createBrowserRouter([
     element: <>
       <NavBar/>
       <DestinationsPage />
+    </>
+  },
+  {
+    path: "/starships",
+    element: <>
+      <NavBar/>
+      <ShipsPage />
     </>
   },
   {
@@ -62,6 +71,13 @@ const router = createBrowserRouter([
     element: <>
       <NavBar/>
       <TourGuidePage/>
+    </>
+  },
+  {
+    path: "/starships/:name",
+    element: <>
+      <NavBar/>
+      <ShipPage/>
     </>
   },
 ]);

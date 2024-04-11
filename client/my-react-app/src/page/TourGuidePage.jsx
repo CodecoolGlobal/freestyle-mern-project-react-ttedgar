@@ -26,8 +26,8 @@ function TourGuidePage() {
       <h2>Homeworld:</h2>
       <a href={`/destinations/${guide.homeworld.name}`}>{guide.homeworld.name}</a>
       <h2>Starships:</h2>
-      {guide.starships.map((starship) => (
-        <><h4>{starship.name}</h4></>
+      {guide.starships.map((starship, index) => (
+        <div key={index}><a href={`/starships/${starship.name}`}>{starship.name}</a></div>
       ))}
       </> 
       : <Loading/>}
