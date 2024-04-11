@@ -1,0 +1,16 @@
+import { Schema, model } from "mongoose";
+
+const shipSchema = new Schema({
+    name: String,
+    model: String,
+    manufacturer: String,
+    cost_in_credits: String,
+    length: String,
+    max_atmosphering_speed: String,
+    passengers: String,
+    pilots: [Object],
+    url: String,
+    id: Number
+})
+
+export default model('Ship', shipSchema);
