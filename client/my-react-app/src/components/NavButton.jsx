@@ -1,10 +1,12 @@
 function NavButton({ text, pageLink }) {
   return (
-    <a href={pageLink}>
-      <button>
-        {text}
-      </button>
-    </a>
+    <div className="navBtn">
+      <a href={pageLink}>
+        <button>
+          {text}
+        </button>
+      </a>
+    </div>
   );
 }
 
