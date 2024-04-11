@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import Planet from "./model/Planet.js";
 import Person from "./model/Person.js";
+import Ship from "./model/Ship.js"
 
 const app = express();
 app.use(express.json());
@@ -24,8 +25,10 @@ function createListEndpoint(list, database) {
 
 createOptionEndpoint('planets', Planet)
 createOptionEndpoint('tourguide', Person)
+createOptionEndpoint('starships', Ship)
 createListEndpoint('planets', Planet)
 createListEndpoint('people', Person)
+createListEndpoint('starships', Ship)
 
 app.post('/api/planets', async (req, res) => {
   const newPlanet = req.body;
