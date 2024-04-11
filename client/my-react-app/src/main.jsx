@@ -5,6 +5,7 @@ import NavBar from './components/NavBar.jsx'
 import Admin from './components/Admin.jsx'
 import DestinationsPage from './page/DestinationsPage'
 import "./index.css"
+import Loading from './components/Loading.jsx'
 
 const router = createBrowserRouter([
   {
@@ -22,14 +23,14 @@ const router = createBrowserRouter([
     path: "/aboutus",
     element: <>
       <NavBar />
-      <div>még nincs</div>
+      <Loading/>
     </>
   },
   {
     path: "/contact",
     element: <>
       <NavBar />
-      <div>még nincs</div>
+      <Loading/>
     </>
   },
   {
