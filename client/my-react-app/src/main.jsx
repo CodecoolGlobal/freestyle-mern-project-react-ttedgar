@@ -6,9 +6,10 @@ import Admin from './components/Admin.jsx'
 import DestinationsPage from './page/DestinationsPage'
 import "./index.css"
 import Loading from './components/Loading.jsx'
-import TourGuidesPage from './page/TourGuidePage.jsx'
+import TourGuidesPage from './page/TourGuidesPage.jsx'
 import HomePage from './page/HomePage.jsx'
 import PlanetPage from './page/PlanetPage.jsx'
+import TourGuidePage from './page/TourGuidePage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -20,34 +21,34 @@ const router = createBrowserRouter([
   {
     path: "/destinations",
     element: <>
-      <NavBar />
+      <NavBar/>
       <DestinationsPage />
     </>
   },
   {
     path: "/aboutus",
     element: <>
-      <NavBar />
+      <NavBar/>
       <Loading/>
     </>
   },
   {
     path: "/contact",
     element: <>
-      <NavBar />
+      <NavBar/>
       <Loading/>
     </>
   },
   {
     path: "/tourguide",
     element: <>
-      <NavBar />
+      <NavBar/>
       <TourGuidesPage/>
     </>
   },
   {
     path: "/admin",
-    element: <Admin />
+    element: <Admin/>
   },
   {
     path: "/destinations/:name",
@@ -60,13 +61,13 @@ const router = createBrowserRouter([
     path: "/tourguide/:name",
     element: <>
       <NavBar/>
-      <PlanetPage/>
+      <TourGuidePage/>
     </>
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <RouterProvider router={router}/>
   </React.StrictMode>,
 )
