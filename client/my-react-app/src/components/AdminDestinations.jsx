@@ -1,21 +1,8 @@
-import { useState, useEffect } from 'react'
+/* eslint-disable react/prop-types */
+function AdminDestinations({planetList}) {
 
-function AdminDestinations() {
-  const [planetList, setPlanetList] = useState(null);
-
-  useEffect(() => {
-    async function fetchDestinations(url) {
-      const response = await fetch(url);
-      const data = await response.json();
-      setPlanetList(data)
-      console.log(data);
-    }
-  
-    fetchDestinations('/api/planets');
-  }, [])
-
-  if (planetList) {
-    return planetList.map((planet) => (
+  return (<div className='adminItem'> {
+    planetList.map((planet) => (
       <div key={planet['_id']}>
         <h2>{planet.name}</h2>
         <h3>{planet.climate}</h3>
@@ -28,14 +15,7 @@ function AdminDestinations() {
         ))}</>
         <img src={planet.imgURL}></img>
       </div>
-    ))
-  }
-  return (
-    <div>
-      <h1>Loading...</h1>
-
-    </div>
-  )
+    ))} </div>)
 }
 
 export default AdminDestinations

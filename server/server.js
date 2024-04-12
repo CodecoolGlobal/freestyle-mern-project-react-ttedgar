@@ -14,8 +14,15 @@ app.get('/api/people', async (req, res) => {
 })
 
 app.get('/api/planets', async (req, res) => {
-  const planets = await Planet.find();
-  res.send(planets)
+  const filter = req.query;
+  const key = Object.keys(filter)[0];
+  if (key) {
+    const planets = await Planet.find({ [key]: { $regex: filter[key] } });
+    res.send(planets)
+  } else {
+    const planets = await Planet.find();
+    res.send(planets)
+  }
 });
 
 app.post('/api/planets', async (req, res) => {

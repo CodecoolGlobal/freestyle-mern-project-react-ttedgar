@@ -26,7 +26,7 @@ return (
         )}
       </div>
     ) : (
-      <Loading />
+      <Loading/>
     )}
   </>
 );
