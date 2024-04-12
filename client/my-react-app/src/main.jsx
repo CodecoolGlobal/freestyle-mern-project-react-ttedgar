@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import NavBar from './components/NavBar.jsx'
-import Admin from './components/Admin.jsx'
+import AdminPage from './page/AdminPage.jsx'
 import DestinationsPage from './page/DestinationsPage'
 import "./index.css"
 import Loading from './components/Loading.jsx'
@@ -57,7 +57,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin",
-    element: <Admin/>
+    element: <>
+    <NavBar />
+    <AdminPage/>
+    <Loading/>
+  </>
   },
   {
     path: "/destinations/:name",

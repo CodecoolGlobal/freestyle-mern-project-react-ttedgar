@@ -29,11 +29,6 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -78,6 +73,10 @@ button:focus-visible {
   align-self: flex-end;
 }
 
+.adminItem{
+  background-image: url('/images/stars.jpg');
+}
+
 .container{
   display:flex;
   flex-direction: row;
@@ -113,21 +112,26 @@ button:focus-visible {
   transform: translate(-50%, -50%);
 }
 
+.dropDown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropDownContent {
+  display: none;
+  position: absolute;
+  background-color: rgb(255, 208, 0);
+  color: black;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Show the dropdown menu on hover */
+.dropDown:hover .dropDownContent {display: block;}
+
 @font-face {
   font-family: 'StarJediHollow';
   src: url('Starjedi.ttf') format('truetype');
 }
-
-
-/* @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */

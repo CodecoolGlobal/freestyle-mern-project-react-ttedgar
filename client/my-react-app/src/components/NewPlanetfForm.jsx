@@ -26,7 +26,7 @@ function NewPlanetForm() {
     })
   }
 
-  return <div>
+  return <div className='adminItem'>
     <h2>Add new destination</h2>
     <form onSubmit={handleSubmit}>
       <div><input placeholder="name" onChange={event => setName(event.target.value)}></input></div>

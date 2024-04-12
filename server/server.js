@@ -16,6 +16,17 @@ function createOptionEndpoint(option, database) {
   })
 }
 
+app.get('/api/planets', async (req, res) => {
+  const filter = req.query;
+  const key = Object.keys(filter)[0];
+  if (key) {
+    const planets = await Planet.find({ [key]: { $regex: filter[key] } });
+    res.send(planets)
+  } else {
+    const planets = await Planet.find();
+    res.send(planets)
+  }
+});
 function createListEndpoint(list, database) {
   app.get(`/api/${list}`, async (req, res) => {
     const toSend = await database.find();
