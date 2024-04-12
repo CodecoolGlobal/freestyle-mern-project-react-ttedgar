@@ -6,41 +6,53 @@ import AdminPage from './page/AdminPage.jsx'
 import DestinationsPage from './page/DestinationsPage'
 import "./index.css"
 import Loading from './components/Loading.jsx'
+import TourGuidesPage from './page/TourGuidesPage.jsx'
+import HomePage from './page/HomePage.jsx'
+import PlanetPage from './page/PlanetPage.jsx'
+import TourGuidePage from './page/TourGuidePage.jsx'
+import ShipsPage from './page/ShipsPage.jsx'
+import ShipPage from './page/ShipPage.jsx'
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <>
-    <NavBar />
-    <Loading/>
+    <HomePage/>
     </>
   },
   {
     path: "/destinations",
     element: <>
-      <NavBar />
+      <NavBar/>
       <DestinationsPage />
+    </>
+  },
+  {
+    path: "/starships",
+    element: <>
+      <NavBar/>
+      <ShipsPage />
     </>
   },
   {
     path: "/aboutus",
     element: <>
-      <NavBar />
+      <NavBar/>
       <Loading/>
     </>
   },
   {
     path: "/contact",
     element: <>
-      <NavBar />
+      <NavBar/>
       <Loading/>
     </>
   },
   {
     path: "/tourguide",
     element: <>
-      <NavBar />
-      <Loading/>
+      <NavBar/>
+      <TourGuidesPage/>
     </>
   },
   {
@@ -50,11 +62,32 @@ const router = createBrowserRouter([
     <AdminPage/>
     <Loading/>
   </>
-  }
+  },
+  {
+    path: "/destinations/:name",
+    element: <>
+      <NavBar/>
+      <PlanetPage/>
+    </>
+  },
+  {
+    path: "/tourguide/:name",
+    element: <>
+      <NavBar/>
+      <TourGuidePage/>
+    </>
+  },
+  {
+    path: "/starships/:name",
+    element: <>
+      <NavBar/>
+      <ShipPage/>
+    </>
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <RouterProvider router={router}/>
   </React.StrictMode>,
 )

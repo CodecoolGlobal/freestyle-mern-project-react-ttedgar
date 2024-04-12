@@ -37,6 +37,7 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
+  color: rgb(255, 255, 255);
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -132,5 +133,5 @@ button:focus-visible {
 
 @font-face {
   font-family: 'StarJediHollow';
-  src: url('./fonts/Starjedi.ttf') format('truetype');
+  src: url('Starjedi.ttf') format('truetype');
 }

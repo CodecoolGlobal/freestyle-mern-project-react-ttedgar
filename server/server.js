@@ -2,16 +2,19 @@ import express from 'express';
 import mongoose from 'mongoose';
 import Planet from "./model/Planet.js";
 import Person from "./model/Person.js";
+import Ship from "./model/Ship.js"
 
 const app = express();
 app.use(express.json());
 
 mongoose.connect('mongodb+srv://galaxy:12345@galaxycluscter.lytezua.mongodb.net/')
 
-app.get('/api/people', async (req, res) => {
-  const personList = await Person.find();
-  res.send(personList);
-})
+function createOptionEndpoint(option, database) {
+  app.get(`/api/${option}/:name`, async (req, res) => {
+    const chosenItem = await database.findOne({name: req.params.name});
+    res.send(chosenItem);
+  })
+}
 
 app.get('/api/planets', async (req, res) => {
   const filter = req.query;
@@ -24,6 +27,19 @@ app.get('/api/planets', async (req, res) => {
     res.send(planets)
   }
 });
+function createListEndpoint(list, database) {
+  app.get(`/api/${list}`, async (req, res) => {
+    const toSend = await database.find();
+    res.send(toSend);
+  })
+}
+
+createOptionEndpoint('planets', Planet)
+createOptionEndpoint('tourguide', Person)
+createOptionEndpoint('starships', Ship)
+createListEndpoint('planets', Planet)
+createListEndpoint('people', Person)
+createListEndpoint('starships', Ship)
 
 app.post('/api/planets', async (req, res) => {
   const newPlanet = req.body;

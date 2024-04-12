@@ -9,7 +9,8 @@ function NavBar() {
     <NavButton text="About us" pageLink="http://localhost:5173/aboutus" />
     <NavButton text="Contact" pageLink="http://localhost:5173/contact" />
     <NavButton text="Tour guides" pageLink="http://localhost:5173/tourguide" />
-    <NavButton text="admin" pageLink="http://localhost:5173/admin" id="adminBtn" />
+    <NavButton text="Starships" pageLink="http://localhost:5173/starships" />
+    <NavButton text="Admin" pageLink="http://localhost:5173/admin" id="adminBtn" />
   </div>
 }
 
