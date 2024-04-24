@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import Planet from "./model/Planet.js";
 import Person from "./model/Person.js";
 import Ship from "./model/Ship.js"
+import Reservation from './model/Reservation.js';
 
 const app = express();
 app.use(express.json());
@@ -51,6 +52,16 @@ app.post('/api/planets', async (req, res) => {
   newPlanet.residents = residents;
   console.log(newPlanet);
   Planet.create(newPlanet);
+})
+
+app.get('/api/planet/:id', async (req, res) => {
+  const planet = await Planet.findById(req.params.id);
+  return res.send(planet);
+})
+
+app.post('/api/reservation', async (req, res) => {
+  const reservation = await Reservation.create(req.body)
+  res.send(reservation);
 })
 
 app.listen(5000, () => {

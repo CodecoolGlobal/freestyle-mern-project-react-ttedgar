@@ -1,12 +1,13 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
-function Booking() {
+function Booking({ planet }) {
   const [booking, setBooking] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div>
-      <button onClick={() => setBooking(true)}>Book now!</button>
-      {booking ? <div>részletek</div> : null}
+      <button onClick={() => navigate(`/booking/${planet._id}`)}>Book now!</button>
     </div>
   )
 }

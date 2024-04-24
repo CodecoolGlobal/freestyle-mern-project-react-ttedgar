@@ -5,7 +5,8 @@ const personSchema = new Schema({
   starships: [Object],
   homeworld: Object,
   imageUrl: String,
-  id: Number
+  id: Number,
+  price: Number
 })
 
 export default model('Person', personSchema);

@@ -10,7 +10,8 @@ const shipSchema = new Schema({
     passengers: String,
     pilots: [Object],
     url: String,
-    id: Number
+    id: Number,
+    price: Number
 })
 
 export default model('Ship', shipSchema);
