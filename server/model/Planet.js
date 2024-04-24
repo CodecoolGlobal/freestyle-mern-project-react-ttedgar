@@ -7,7 +7,8 @@ const planetSchema = new Schema({
   gravity: String,
   population: String,
   residents: [Object],
-  imageURL: String
+  imageURL: String,
+  price: Number
 })
 
 export default model('Planet', planetSchema);

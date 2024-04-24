@@ -27,7 +27,7 @@ async function fetchData(url) {
 }
 
 async function uploadDatabase() {
-  const planetsFromDatabase = await fetchDataFromDatabase("https://swapi.dev/api/planets")
+  const planetsFromDatabase = await fetchDataFromDatabase("https://swapi.py4e.com/api/planets")
   for (const planet of planetsFromDatabase) {
     if (planet.residents.length) {
       const residents = [];
@@ -41,7 +41,8 @@ async function uploadDatabase() {
         gravity: planet.gravity,
         population: planet.population,
         residents: residents,
-        imageURL: null
+        imageURL: null,
+        price: Math.floor(100000 + (Math.random() * 100000))
       })
     }
   }
@@ -53,7 +54,7 @@ async function uploadDatabase() {
     }
   })
 
-  const peopleFromDatabase = await fetchDataFromDatabase("https://swapi.dev/api/people")
+  const peopleFromDatabase = await fetchDataFromDatabase("https://swapi.py4e.com/api/people")
   let peopleIndex = 0
   for (const dbperson of peopleFromDatabase) {
     if (dbperson.starships.length) {
@@ -68,12 +69,13 @@ async function uploadDatabase() {
         starships: starships,
         homeworld: homeworld,
         id: peopleIndex,
-        imageURL: null
+        imageURL: null,
+        price: Math.floor(10000 + (Math.random() * 10000))
       })
     }
   }
 
-  const starshipsFromDatabase = await fetchDataFromDatabase("https://swapi.dev/api/starships")
+  const starshipsFromDatabase = await fetchDataFromDatabase("https://swapi.py4e.com/api/starships")
   let shipIndex = 0
   for (const dbship of starshipsFromDatabase) {
     if (dbship.pilots.length) {
@@ -91,7 +93,8 @@ async function uploadDatabase() {
           passengers: dbship.passengers,
           pilots: pilots,
           url: dbship.url,
-          id: shipIndex
+          id: shipIndex,
+          price: Math.floor(500000 + (Math.random() * 500000))
         })
     }
   }

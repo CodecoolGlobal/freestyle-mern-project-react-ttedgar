@@ -12,6 +12,7 @@ import PlanetPage from './page/PlanetPage.jsx'
 import TourGuidePage from './page/TourGuidePage.jsx'
 import ShipsPage from './page/ShipsPage.jsx'
 import ShipPage from './page/ShipPage.jsx'
+import BookingPage from './page/BookingPage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -82,6 +83,13 @@ const router = createBrowserRouter([
     element: <>
       <NavBar/>
       <ShipPage/>
+    </>
+  },
+  {
+    path: "/booking/:id",
+    element: <>
+      <NavBar/>
+      <BookingPage/>
     </>
   },
 ]);
