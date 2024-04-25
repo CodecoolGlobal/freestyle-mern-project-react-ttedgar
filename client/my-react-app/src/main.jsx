@@ -14,6 +14,7 @@ import ShipsPage from './page/ShipsPage.jsx'
 import ShipPage from './page/ShipPage.jsx'
 import BookingPage from './page/BookingPage.jsx'
 import Starmap from './page/Starmap.jsx'
+import Introduction from './page/Introduction.jsx'
 
 const router = createBrowserRouter([
   {
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
     path: "/aboutus",
     element: <>
       <NavBar/>
-      <Loading/>
+      <Introduction/>
     </>
   },
   {
