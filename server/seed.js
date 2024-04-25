@@ -16,7 +16,6 @@ async function fetchDataFromDatabase(url) {
       break
     }
   }
-  console.log(allData);
   return allData;
 }
 
@@ -41,7 +40,7 @@ async function uploadDatabase() {
         gravity: planet.gravity,
         population: planet.population,
         residents: residents,
-        imageURL: null,
+        imageURL: `${planet.name}.jpg`,
         price: Math.floor(100000 + (Math.random() * 100000))
       })
     }
@@ -61,6 +60,7 @@ async function uploadDatabase() {
       const starships = [];
       const homeworld = await fetchData(dbperson.homeworld)
       peopleIndex++
+      console.log(`${((dbperson.name.split(' '))[0]).toLowerCase()}.jpg`);
       for (const starshipURL of dbperson.starships) {
         starships.push(await fetchData(starshipURL))
       }
@@ -68,8 +68,8 @@ async function uploadDatabase() {
         name: dbperson.name,
         starships: starships,
         homeworld: homeworld,
+        imageUrl: `${((dbperson.name.split(' '))[0]).toLowerCase()}.jpg`,
         id: peopleIndex,
-        imageURL: null,
         price: Math.floor(10000 + (Math.random() * 10000))
       })
     }
@@ -92,7 +92,7 @@ async function uploadDatabase() {
           max_atmosphering_speed: dbship['max_atmosphering_speed'],
           passengers: dbship.passengers,
           pilots: pilots,
-          url: dbship.url,
+          imageUrl: `${((dbship.name.split(' '))[0]).toLowerCase()}.img`,
           id: shipIndex,
           price: Math.floor(500000 + (Math.random() * 500000))
         })

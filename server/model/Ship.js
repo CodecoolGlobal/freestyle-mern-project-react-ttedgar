@@ -9,6 +9,7 @@ const shipSchema = new Schema({
     max_atmosphering_speed: String,
     passengers: String,
     pilots: [Object],
+    imageUrl:String,
     url: String,
     id: Number,
     price: Number

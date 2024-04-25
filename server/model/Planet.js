@@ -7,7 +7,7 @@ const planetSchema = new Schema({
   gravity: String,
   population: String,
   residents: [Object],
-  imageURL: String,
+  imageUrl: String,
   price: Number
 })
 
