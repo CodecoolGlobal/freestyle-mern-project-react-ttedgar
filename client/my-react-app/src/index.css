@@ -89,11 +89,13 @@ button:focus-visible {
 .item{
   position: relative;
   max-width: 400px;
+  height: 400px;
 }
 
 .itemImage {
   width: 100%; /* Adjust the width as per your requirement */
-  height: auto; /* Ensure aspect ratio is maintained */
+  height: 100%; /* Ensures the image fills the container height */
+  object-fit: cover;
 }
 
 .itemText {

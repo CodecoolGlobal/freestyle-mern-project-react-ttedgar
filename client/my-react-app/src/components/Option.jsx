@@ -7,7 +7,7 @@ function Option({ optionData, option }) {
     <div className="item">
       <a href={`/${option}/${optionData.name}`}>
         <div className="itemText">{optionData.name}</div>
-        <Image />
+        <Image image={optionData.imageUrl}/>
       </a>
     </div>
   )
