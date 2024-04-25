@@ -137,3 +137,14 @@ button:focus-visible {
   font-family: 'StarJediHollow';
   src: url('Starjedi.ttf') format('truetype');
 }
+
+.mapDiv {
+  background: fixed;
+}
+
+.character {
+  height: 300px;
+  position: relative;
+  left: 1;
+  top: 0;
+}

@@ -13,6 +13,7 @@ import TourGuidePage from './page/TourGuidePage.jsx'
 import ShipsPage from './page/ShipsPage.jsx'
 import ShipPage from './page/ShipPage.jsx'
 import BookingPage from './page/BookingPage.jsx'
+import Starmap from './page/Starmap.jsx'
 
 const router = createBrowserRouter([
   {
@@ -90,6 +91,13 @@ const router = createBrowserRouter([
     element: <>
       <NavBar/>
       <BookingPage/>
+    </>
+  },
+  {
+    path: "/starmap",
+    element: <>
+      <NavBar/>
+      <Starmap/>
     </>
   },
 ]);

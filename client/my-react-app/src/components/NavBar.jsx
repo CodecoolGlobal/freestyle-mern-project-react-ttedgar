@@ -11,6 +11,7 @@ function NavBar() {
     <NavButton text="Tour guides" pageLink="http://localhost:5173/tourguide" />
     <NavButton text="Starships" pageLink="http://localhost:5173/starships" />
     <NavButton text="Admin" pageLink="http://localhost:5173/admin" id="adminBtn" />
+    <NavButton text="Starmap minigame" pageLink="http://localhost:5173/starmap" id="adminBtn" />
   </div>
 }
 
