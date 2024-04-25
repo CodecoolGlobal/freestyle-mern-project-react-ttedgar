@@ -61,7 +61,8 @@ app.get('/api/planet/:id', async (req, res) => {
 
 app.post('/api/reservation', async (req, res) => {
   const reservation = await Reservation.create(req.body)
-  res.send(reservation);
+  const trackingNumber = Math.round(Math.random() * 10000000000)
+  res.send({trackingNumber: trackingNumber});
 })
 
 app.listen(5000, () => {

@@ -13,6 +13,7 @@ function BookingPage() {
   const [departure, setDeparture] = useState(null);
   const [payment, setPayment] = useState(false);
   const [tripDetails, setTripDetails] = useState(null);
+  const [trackingNumber, setTrackingNumber] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
@@ -38,6 +39,10 @@ function BookingPage() {
 
   if (!planet) {
     return <Loading />;
+  }
+  
+  if (trackingNumber) {
+    return <h1>Reservation confirmed! Your reservation number is {trackingNumber}. We will contact you with further information! May the force be with you!</h1>
   }
 
   return (
@@ -89,7 +94,6 @@ function BookingPage() {
                 type="date"
                 onChange={(e) => {
                   setDeparture(e.target.value);
-                  console.log(e.target.value);
                 }}
                 min={arrival}
               />
@@ -118,7 +122,7 @@ function BookingPage() {
               })
             }}>Payment</button> : null}
         </form>
-          {payment ? <Payment tripDetails={tripDetails}/> : null}
+          {payment ? <Payment tripDetails={tripDetails} setTrackingNumber={setTrackingNumber}/> : null}
       </div>
     </div>
   );

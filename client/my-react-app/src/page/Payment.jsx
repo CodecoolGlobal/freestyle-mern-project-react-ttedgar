@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react'
 
-function Payment({ tripDetails }) {
+function Payment({ tripDetails, setTrackingNumber }) {
   const [firstName, setFirstName] = useState(null);
   const [lastName, setLastName] = useState(null);
   const [email, setEmail] = useState(null);
@@ -74,7 +74,6 @@ function validateCvv(event) {
         cvv,
       },
     };
-    console.log(isCceInvalide, isCceInvalide, isCvvInvalide);
 
     (ccNumber.length === 19 && ccExpiration.length === 5 && cvv.length === 3) ? createReservation(reservation) : null;
   }
@@ -86,8 +85,9 @@ function validateCvv(event) {
       body: JSON.stringify(reservation)
     })
     const data = await response.json();
-    return data;
+    setTrackingNumber(data.trackingNumber);
   }
+
 
   return (
     <div>
